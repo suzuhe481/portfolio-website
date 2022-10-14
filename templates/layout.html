@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hector Suazo</title>
+
+        <meta charset=UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        {# This is a jinja comment which is needed since html comments are still read. #}
+    </head>
+    
+    <body>
+
+      <div class="navbar-container">
+          <h1 class="logo">My Portfolio Website</h1>
+
+      </div>
+            
+      <div class="container">
+          {% block content %}
+          {% endblock %}
+      </div>
+
+    </body>
+</html>
