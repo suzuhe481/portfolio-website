@@ -4,12 +4,16 @@
   <meta charset=UTF-8">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-    <body>
-        <div>
-            <h1>My Portfolio Website</h1>
-            <p>
-                Hi, this is my personal website.
-            </p>
-        </div>
-    </body>
+
+{% extends "layout.html" %}
+
+{% block content %}
+  <body>
+      <div>
+          <p>
+              Hi, this is my personal website.
+          </p>
+      </div>
+  </body>
+{% endblock %}
 </html>
