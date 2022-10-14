@@ -3,22 +3,24 @@
     <head>
         <title>Hector Suazo</title>
 
-        <meta charset=UTF-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         {# This is a jinja comment which is needed since html comments are still read. #}
     </head>
     
     <body>
-
-      <div class="navbar-container">
-          <h1 class="logo">My Portfolio Website</h1>
-
+      <div id="nav-bar-container">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="">Project 1</a>
+        <a href="">Project 2</a>
+        <a href="">About</a>
       </div>
-            
+
+      <h1 class="logo">My Portfolio Website</h1>
+
       <div class="container">
           {% block content %}
           {% endblock %}
       </div>
-
     </body>
 </html>
