@@ -1,24 +1,36 @@
+/* layout.html STYLINGS */
+
 /* Styles the top header text. */
 h1 {
-  border: 2px #eee solid;
-  color: orange;
-  text-align: center;
-  padding: 10px;
+  border      : 2px #eee solid;
+  text-align  : center;
+  padding     : 10px;
+  margin      : 10px;
+
+  color : orange;
 }
 
 /* Adds background color to top navigation bar. */
 #nav-bar-container {
-  background-color: rgb(160, 160, 160);
-  overflow: hidden;
+  background-color  : rgb(160, 160, 160);
+
+  overflow  : hidden;
 }
 
 /* Styles links inside navigation bar. */
 #nav-bar-container a {
-  float: left;
-  color: #f2f2f2;
-  text-align:center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-family: 'Courier New', Courier, monospace;
+  font-size       : 17px;
+  font-family     : 'Courier New', Courier, monospace;
+  text-decoration : none;
+
+  text-align      : center;
+  padding         : 14px 16px;
+  float           : left;
+
+  color   : #f2f2f2;
+}
+
+/* Removes margin. */
+body {
+  margin: 0;
 }
