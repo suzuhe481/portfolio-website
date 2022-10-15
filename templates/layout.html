@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+      {% if title %}
+        <title>{% block title %} {{title}} {% endblock %}</title>
+      {% else %}
         <title>Hector Suazo</title>
+      {% endif %}
 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -13,10 +17,10 @@
         <a href="{{ url_for('index') }}">Home</a>
         <a href="">Project 1</a>
         <a href="">Project 2</a>
-        <a href="">About</a>
+        <a href="{{ url_for('about') }}">About</a>
       </div>
 
-      <h1 class="logo">My Portfolio Website</h1>
+      <h1>My Portfolio Website</h1>
 
       <div class="container">
           {% block content %}
