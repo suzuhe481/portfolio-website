@@ -2,8 +2,8 @@
 <html>
   <body>
   {% extends "layout.html" %}
+
   {% block content %}
-  
     <div class="project1">
       <h1>NASA's Astronomy Picture Of the Day</h1>
       <p>
@@ -24,6 +24,67 @@
       </form>
       <button onclick="clearPage()">Click to Clear Page</button>
 
+      <!-- If data is recieved, run below. -->
+      {% if nasa_Data %}
+        <div id="APOD_Content">
+          <p id="nasa_APOD_title"></p>
+          <p id="nasa_APOD_date"></p>
+          <img id="nasa_APOD_image" src="" width="80%">
+          <iframe id="nasa_APOD_video" width="420" height="315" style="display: none;" allowfullscreen src=""></iframe> 
+          <p id="nasa_APOD_exp"></p>
+        </div>
+        
+        <!-- Displays the APOD data. -->
+        <script>
+          var nData = JSON.parse('{{ nasa_Data | tojson | safe}}');
+
+          document.getElementById("nasa_APOD_title").textContent = nData.title;
+          document.getElementById("nasa_APOD_date").textContent = nData.date;
+        
+          // Checks if APOD is a youtube video or picture and displays it in correct html element.
+          if(nData.url.includes("youtube.com")) {
+            document.getElementById("nasa_APOD_video").src = nData.url;
+            document.getElementById("nasa_APOD_video").style = "display: block;"    // Displays video.
+            document.getElementById("nasa_APOD_image").style = "display: none";     // Hides image.
+          }
+          else {
+            document.getElementById("nasa_APOD_image").src = nData.hdurl;
+            document.getElementById("nasa_APOD_video").style = "display: none;"     // Hides video.
+            document.getElementById("nasa_APOD_image").style = "display: block;"    // Displays image.
+          }
+
+          document.getElementById("nasa_APOD_exp").textContent = nData.explanation;
+        </script>
+      {% endif %}
+
+        <!-- Script sets a specific range of dates for the calendar date picker. -->
+        <!-- This script allows the user to clear the page of data. -->
+        <script>
+          var today = new Date();
+          var currentDay = today.getDate();
+          var currentMonth = today.getMonth() + 1; //January is 0!
+          var currentYear = today.getFullYear();
+          if(currentDay < 10) {
+            currentDay='0'+ currentDay
+          } 
+          if(currentMonth < 10) {
+            currentMonth='0'+ currentMonth
+          } 
+
+          today = currentYear + '-' + currentMonth + '-' + currentDay;
+          document.getElementById("customDate").setAttribute("max", today);
+          function clearPage() {
+            document.getElementById("nasa_APOD_title").textContent = "";
+            document.getElementById("nasa_APOD_date").textContent = "";
+            document.getElementById("nasa_APOD_image").src = "";
+            document.getElementById("nasa_APOD_video").src = "";
+            document.getElementById("nasa_APOD_video").style = "display: none;"
+            document.getElementById("nasa_APOD_exp").innerHTML = "";
+            document.getElementById("for").innerHTML = "fksbdafk";
+          }
+        </script>
+    </div>
   {% endblock %}
+
   </body>
 </html>
