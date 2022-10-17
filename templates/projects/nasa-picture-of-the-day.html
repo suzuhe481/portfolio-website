@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  {% extends "layout.html" %}
+  {% block content %}
+  
+    <div class="project1">
+      <h1>NASA's Astronomy Picture Of the Day</h1>
+      <p>
+        This will let you use NASA's APOD (Astronomy Picture Of the Day) API. <br>
+        You will be able to view today's APOD, a random APOD, or an APOD from a day you pick. <br>
+        APOD's can be pictures, gifs, or YouTube videos. 
+      </p>
+
+      <form method="POST">
+        <button name="getToday" value="get_today_APOD">Click to Get Today's Image</button>
+        <button name="getRandom" value="get_random_APOD">Click to Get Random Image</button>
+        
+        <br>
+        
+        <label for="customDate">Pick a Date:</label>
+        <input type="date" id="customDate" name="pickedDate" min="1995-06-16" max="">
+        <button name="getCustom" value="get_custom_APOD">Click to Get Specified Image</button>
+      </form>
+      <button onclick="clearPage()">Click to Clear Page</button>
+
+  {% endblock %}
+  </body>
+</html>
