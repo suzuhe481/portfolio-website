@@ -9,15 +9,18 @@
 
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         {# This is a jinja comment which is needed since html comments are still read. #}
     </head>
     
     <body>
       <div id="nav-bar-container">
-        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('index') }}" id="home">Home</a>
 
         <div id="projects-dropdown">
-          <button id="dropdown-button">Projects</button>
+          <button id="dropdown-button">Projects
+            <i class="fa fa-caret-down"></i>
+          </button>
           <div id="dropdown-content">
             <a href="{{ url_for('nasa_api_project') }}">NASA Astronomy Picture of the Day</a>
             <a href="">Project 2</a>
@@ -25,6 +28,10 @@
         </div>
 
         <a href="{{ url_for('about') }}">About</a>
+
+        <a href="" id="hamburger-icon">
+          <i class="fa fa-bars"></i>
+      </a>
       </div>
 
       <h1>My Portfolio Website</h1>
