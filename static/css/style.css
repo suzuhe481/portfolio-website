@@ -34,3 +34,11 @@ h1 {
 body {
   margin: 0;
 }
+
+/* Desktop rules. */
+@media screen {
+  /* Changes link color on hover. */
+  #nav-bar-container a:hover {
+    background-color: #555;
+  }
+}
