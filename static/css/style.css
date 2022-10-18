@@ -26,6 +26,7 @@ h1 {
   text-align      : center;
   padding         : 14px 16px;
   float           : left;
+  /* display         : block; */
 
   color   : #f2f2f2;
 }
@@ -82,6 +83,26 @@ body {
   display : block;
   float   : none;
   padding : 12px 16px;
+}
+
+/* Hides the link that opens/closes topnav on small screens. */
+#hamburger-icon {
+  display : none;
+}
+
+/* When screen is less than 600 pixels wide...
+Hide all links except home.
+Show icon that opens/closes topnav. */
+@media screen and (max-width: 600px) {
+  #home ~ a:not(#hamburger-icon),
+  #projects-dropdown #dropdown-button {
+    display : none;
+  }
+
+  #nav-bar-container > #hamburger-icon {
+    float   : right;
+    display : block;
+  }
 }
 
 /* Desktop rules. */
