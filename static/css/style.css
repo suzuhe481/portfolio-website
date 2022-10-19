@@ -1,14 +1,15 @@
 /* layout.html STYLINGS */
 
-/* Styles the top header text. */
-h1 {
-  border      : 2px #eee solid;
-  text-align  : center;
-  padding     : 10px;
-  margin      : 10px;
+/* Styles the top text with name. */
+#home {
+  border        : 2px #eee solid;
+  border-radius : 40px;
+  text-align    : center;
+  padding       : 10px;
+  margin        : 10px;
 
   color : white;
-  float: left;
+  float : left;
 }
 
 /* Adds background color to top navigation bar. */
