@@ -15,28 +15,24 @@
     </head>
     
     <body>
-      <div id="nav-bar-container">
-        <a href="{{ url_for('index') }}" id="home" class="no-select">Hector Suazo</a>
+      <ul id="nav-bar-container">
+          <li><a href="{{ url_for('index') }}" id="home" class="no-select">Hector Suazo</a></li>
+          <li id="projects-dropdown">
+            <button id="dropdown-button">Projects
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <ul id="dropdown-content">
+              <li><a href="{{ url_for('nasa_api_project') }}">NASA Astronomy Picture of the Day</a></li>
+              <li><a href="">Project 2</a></li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <a href="" id="hamburger-icon">
+            <i class="fa fa-bars"></i>
+          </a>
+      </ul>
 
-        <div id="projects-dropdown">
-          <button id="dropdown-button">Projects
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div id="dropdown-content">
-            <a href="{{ url_for('nasa_api_project') }}">NASA Astronomy Picture of the Day</a>
-            <a href="">Project 2</a>
-          </div>
-        </div>
-
-        <a href="{{ url_for('about') }}">About</a>
-
-        <a href="" id="hamburger-icon">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-
-
-      <div class="container">
+      <div class="body-container">
           {% block content %}
           {% endblock %}
       </div>
