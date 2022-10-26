@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      {% if title %}
-        <title>{% block title %} {{title}} {% endblock %}</title>
-      {% else %}
-        <title>Hector Suazo</title>
-      {% endif %}
+  <head>
+    {% if title %}
+      <title>{% block title %} {{title}} {% endblock %}</title>
+    {% else %}
+      <title>Hector Suazo</title>
+    {% endif %}
 
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        {# This is a jinja comment which is needed since html comments are still read. #}
-    </head>
+    <meta charset="UTF-8">
     
-    <body>
-      <ul id="nav-bar-container">
-          <li><a href="{{ url_for('index') }}" id="home" class="no-select">Hector Suazo</a></li>
-          <li id="projects-dropdown">
-            <button id="dropdown-button">Projects
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <ul id="dropdown-content">
-              <li><a href="{{ url_for('nasa_api_project') }}">NASA Astronomy Picture of the Day</a></li>
-              <li><a href="">Project 2</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ url_for('about') }}">About</a></li>
-          <a href="" id="hamburger-icon">
-            <i class="fa fa-bars"></i>
-          </a>
-      </ul>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      <div class="body-container">
-          {% block content %}
-          {% endblock %}
-      </div>
-    </body>
+    <script src="{{url_for('static', filename='scripts/scripts.js')}}" async></script>
+    {# This is a jinja comment which is needed since html comments are still read. #}
+  </head>
+    
+  <body>
+    <div id="nav-bar-container">
+      <ul id="nav-bar" class="topnav">
+        <li><a href="{{ url_for('index') }}" id="home" class="no-select">Hector Suazo</a></li>
+        <li id="projects-dropdown">
+          <button id="dropdown-button" onclick="toggleDropdown()">Projects
+            <span class="fa fa-caret-down"></span>
+          </button>
+          <ul id="dropdown-content">
+            <li><a href="{{ url_for('nasa_api_project') }}">NASA Astronomy Picture of the Day</a></li>
+            <li><a href="">Project 2</a></li>
+          </ul>
+        </li>
+        <li id="about"><a href="{{ url_for('about') }}">About</a></li>
+        <a href="javascript:void(0);" id="hamburger-icon" onclick="toggleResponsive()">
+          <span class="fa fa-bars"></span>
+        </a>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
 </html>
