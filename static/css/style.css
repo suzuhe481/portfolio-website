@@ -1,27 +1,33 @@
-/* layout.html STYLINGS */
+/* 
+Navigation bar stylings.
+Links.
+Responsive stylings.
+*/
 
-/* Styles the top text with name. */
+/* Styles the Home button of the text "Hector Suazo". */
 #home {
-  border        : 2px #eee solid;
-  border-radius : 40px;
-  text-align    : center;
-  padding       : 10px;
-  margin        : 10px;
-
-  color : white;
-  float : left;
+  color       : white;
+  
+  text-align  : center;
+  padding     : 14px 16px;
 }
 
 /* Adds background color to top navigation bar. */
-#nav-bar-container {
+#nav-bar {
   background-color  : rgb(160, 160, 160);
 
-  overflow  : hidden;
+  overflow          : hidden;
 
-  display: flex;
+  display           : flex;
+  align-items       : center;
 }
 
-/* Disables highlighting on elements. */
+/* Hides the decoration of every list item inside the navbar. */
+#nav-bar li {
+  text-decoration : none;
+}
+
+/* Disables highlighting on select elements with the class "no-select". */
 .no-select {
   -webkit-touch-callout : none; /* iOS Safari */
   -webkit-user-select   : none; /* Safari */
@@ -32,38 +38,32 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-/* Styles links inside navigation bar. */
-#nav-bar-container a {
+/* 
+Styles text inside the navigation bar... 
+  -The home button
+  -The dropdown menu
+  -Links
+*/
+#home ,
+#projects-dropdown,
+#nav-bar > li > a {
+  color           : #f2f2f2;
+
   font-size       : 17px;
   font-family     : 'Courier New', Courier, monospace;
   text-decoration : none;
 
   text-align      : center;
-  padding         : 14px 16px;
-  float           : left;
-  /* display         : block; */
-
-  color   : #f2f2f2;
-}
-
-/* Removes margin. */
-body {
-  margin: 0;
-}
-
-/* Positioning and styling of the dropdown container. */
-#projects-dropdown {
-  color   : #f2f2f2;
-
-  font-size   : 17px;
-  font-family :'Courier New', Courier, monospace;
-
-  float     : left;
-  overflow  : hidden;
   
+  display         : block;
 }
 
-/* Styling of the dropdown button. */
+/* Adds padding to the links inside of the navbar. */
+#nav-bar > li > a {
+  padding : 14px 16px;
+}
+
+/* Styles the dropdown button. */
 #dropdown-button {
   color             : inherit;
   background-color  : inherit;
@@ -71,68 +71,153 @@ body {
   font-size         : inherit; 
   font-style        : inherit;
 
-  border      : none;
-  outline     : none;
-  padding     : 14px 16px;
-  margin      : 0;
+  border            : none;
+  outline           : none;
+  padding           : 12px 16px;
+  margin            : 0;
+
+  cursor            : pointer;
 }
 
-/* Styling of the dropdown content. (Hidden by default) */
+/* Styles the dropdown content. (Hidden by default) */
 #dropdown-content {
   background-color  : #f9f9f9;
-  box-shadow        : 0px 8px 16px 0 px rgba(0, 0, 0, 0.2);
 
-  display   : none;
-  position  : absolute;
+  display           : none;
+  position          : absolute;
 
-  min-width : 160px;
-  z-index   : 1;
+  min-width         : 160px;
 }
 
-/* Styling of the dropdown content links. */
+/* Styles the links inside of the dropdown content. */
 #dropdown-content a {
   color           : black;
   text-decoration : none;
   text-align      : left;
 
-  display : block;
-  float   : none;
-  padding : 12px 16px;
+  display         : block;
+  float           : none;
+  padding         : 12px 16px;
 }
 
-/* Hides the hamburger icon on desktop. */
+/* Styles and hides the hamburger icon on desktop. */
 #hamburger-icon {
   display : none;
+
+  color   : white;
 }
 
-/* Mobile rules. */
-@media screen and (max-width: 600px) {
-  /* Hide all links except home.
-  Show icon that opens/closes navbar. */
-  #home ~ a:not(#hamburger-icon),
-  #projects-dropdown #dropdown-button {
+/* Displays the projects dropdown menu when Projects is clicked.  */
+#projects-dropdown > .show {
+  display : block;
+}
+
+/* Mobile rules and for screens under 600px. */
+@media only screen and (hover: none), (max-width: 600px) {
+  /* Hides all links except home. 
+      -Projects dropdown
+      -About 
+  */
+  #projects-dropdown,
+  #about {
     display : none;
   }
 
-  #nav-bar-container > #hamburger-icon {
-    float   : right;
+  /* 
+  Adjusts font for specified elements.
+    -Home
+    -Projects button
+    -Hamburger menu icon
+  */
+  #nav-bar > li > a,
+  #dropdown-button,
+  #hamburger-icon {
+    font-size   : 2.5em;
+    font-weight : bold;
+  }
+
+  /* Adjusts the font size for the project links in the dropdown menu. */
+  #nav-bar #dropdown-content li {
+    font-size : 1.5em;
+  }
+
+  /* Allows the home screen to shrnk/grow as width changes. */
+  #nav-bar > li:first-child {
+    flex-grow : 1;
+  }
+
+  /* Styles and displays the hamburger menu icon. */
+  #nav-bar > #hamburger-icon {
+    display     : block;
+    position    : absolute;
+    float       : right;
+
+    padding     : 10px;
+    margin      : 5px;
+    right       : 0;
+    top         : 0;
+  }
+
+
+  /* 
+  The below rules are applied only when the top navigation bar has the class of "responsive".
+  These rules are to display the navigation bar vertically on smaller screens.
+  */
+
+  /* Changes the navigation bar to be vertical.*/
+  .topnav.responsive#nav-bar{
+    position        : relative;
+    flex-direction  : column;
+    overflow        : visible;
+  }
+
+  /* Centers the links in the dropdown menu. */
+  .topnav.responsive #dropdown-content a {
+    float       : none;
+    display     : block;
+    text-align  : center;
+  }
+
+  /* Displays the dropdown menu and About. */
+  .topnav.responsive > #projects-dropdown,
+  .topnav.responsive > #about {
+    float   : none;
     display : block;
   }
+
+  .topnav.responsive > #projects-dropdown > #dropdown-content {
+    position  : relative;
+  }
+
+  /* Allows the entire width of the dropdown button to be clickable. */
+  .topnav.responsive > #projects-dropdown > #dropdown-button {
+    width : 100%;
+  }
+
+  /* 
+  Expands each of the navbar links to take the whole width of the screen. 
+    -The Home link
+    -The projects dropdown menu
+    -The About link
+  */
+  .topnav.responsive > li:first-child,
+  .topnav.responsive > #projects-dropdown,
+  .topnav.responsive > #about {
+    width : 100vw;
+  }
+  /* 
+  The above rules are applied only when the top navigation bar has the class of "responsive".
+  */
 }
 
 /* Desktop rules. */
 @media screen {
-  /* Changes link color in nav-bar-container on hover. */
-  #nav-bar-container a:hover,
+  /* Changes link color in nav-bar on hover. */
+  #nav-bar a:hover,
   #projects-dropdown:hover,
   #dropdown-button:hover {
     background-color  : #555;
     color             : white;
-  }
-
-  /* Displays the dropdown content on hover. */
-  #projects-dropdown:hover #dropdown-content {
-    display : block;
   }
 
   /* Changes background and text color of Projects dropdown links on hover. */
