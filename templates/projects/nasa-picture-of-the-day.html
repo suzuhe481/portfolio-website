@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nasa.css') }}">
+    <script src="{{url_for('static', filename='scripts/nasaScripts.js')}}" async></script>
+  </head>
+
   <body>
   {% extends "layout.html" %}
 
   {% block content %}
-    <div class="project1">
-      <h1>NASA's Astronomy Picture Of the Day</h1>
-      <p>
-        This will let you use NASA's APOD (Astronomy Picture Of the Day) API. <br>
-        You will be able to view today's APOD, a random APOD, or an APOD from a day you pick. <br>
-        APOD's can be pictures, gifs, or YouTube videos. 
-      </p>
+    <div class="project-container">
+      <div id="heading">
+        <h1 id="title">NASA's Astronomy Picture Of the Day</h1>
+        <p>
+          This will let you use NASA's APOD (Astronomy Picture Of the Day) API. <br>
+          You will be able to view today's APOD, a random APOD, or an APOD from a day you pick. <br>
+          APOD's can be pictures, gifs, or YouTube videos.
+        </p>
+      </div>
 
       <form method="POST">
-        <button name="getToday" value="get_today_APOD">Click to Get Today's Image</button>
-        <button name="getRandom" value="get_random_APOD">Click to Get Random Image</button>
-        
-        <br>
-        
-        <label for="customDate">Pick a Date:</label>
-        <input type="date" id="customDate" name="pickedDate" min="1995-06-16" max="">
-        <button name="getCustom" value="get_custom_APOD">Click to Get Specified Image</button>
+        <label for="nasa-form">Pick a way to get an Image: </label>
+        <select name="nasa-form" id="nasa-form" onchange="toggleCalendar()">
+          <option name="getToday" value="getToday">Get Today's Image</option>
+          <option name="getRandom" value="getRandom">Get a Random Image</option>
+          <option name="getCustom" value="getCustom">Get a Specified Image</option>
+        </select>
+
+        <label class="customDate" for="customDate" style="display:none;">Pick a Date:</label>
+        <input class="customDate" type="date" id="customDate" name="pickedDate" min="1995-06-16" max="" style="display:none;">
+        <input type="submit" value="Submit">
       </form>
+
       <button onclick="clearPage()">Click to Clear Page</button>
 
-      <!-- If data is recieved, run below. -->
+      <!-- If data is recieved, display below. -->
       {% if nasa_Data %}
         <div id="APOD_Content">
           <p id="nasa_APOD_title"></p>
@@ -57,32 +67,6 @@
         </script>
       {% endif %}
 
-        <!-- Script sets a specific range of dates for the calendar date picker. -->
-        <!-- This script allows the user to clear the page of data. -->
-        <script>
-          var today = new Date();
-          var currentDay = today.getDate();
-          var currentMonth = today.getMonth() + 1; //January is 0!
-          var currentYear = today.getFullYear();
-          if(currentDay < 10) {
-            currentDay='0'+ currentDay
-          } 
-          if(currentMonth < 10) {
-            currentMonth='0'+ currentMonth
-          } 
-
-          today = currentYear + '-' + currentMonth + '-' + currentDay;
-          document.getElementById("customDate").setAttribute("max", today);
-          function clearPage() {
-            document.getElementById("nasa_APOD_title").textContent = "";
-            document.getElementById("nasa_APOD_date").textContent = "";
-            document.getElementById("nasa_APOD_image").src = "";
-            document.getElementById("nasa_APOD_video").src = "";
-            document.getElementById("nasa_APOD_video").style = "display: none;"
-            document.getElementById("nasa_APOD_exp").innerHTML = "";
-            document.getElementById("for").innerHTML = "fksbdafk";
-          }
-        </script>
     </div>
   {% endblock %}
 
