@@ -1,4 +1,4 @@
-
+/* Styles the heading */
 #heading {
   display: flex;
   flex-direction: column;
@@ -10,7 +10,51 @@
   /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
 }
 
+/* Styles the title in the heading */
 #title {
   font-size: 2em;
   text-decoration: underline;
+}
+
+/* Centers most of telements in .project-container */
+div.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+select#nasa-form,
+form > input[type=submit],
+#APOD_Content > #clearButton {
+  border: none;
+}
+
+/* Centers the text in the heading */
+div#heading > h1,
+div#heading > p {
+  text-align: center;
+}
+
+/* Centers the elements in the form and #APOD_Content */
+form,
+#APOD_Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Bolds the font of the APOD title and date */
+#APOD_Content > #nasa_APOD_title,
+#APOD_Content > #nasa_APOD_date {
+  font-weight: bold;
+}
+
+#APOD_Content > #nasa_APOD_exp {
+  padding: 1em;
+  margin: 1em;
+  font-style: italic;
+  border: 5px black solid;
+  border-radius: 25px;
 }
