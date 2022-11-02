@@ -38,7 +38,7 @@
         <p id="nasa_APOD_date"></p>
         <img id="nasa_APOD_image" src="" width="80%">
         <iframe id="nasa_APOD_video" width="420" height="315" style="display: none;" allowfullscreen src=""></iframe> 
-        <p id="nasa_APOD_exp"></p>
+        <p id="nasa_APOD_exp" style="display: none;"></p>
       </div>
 
       <!-- If data is recieved, display below. -->
@@ -49,6 +49,7 @@
         var nData = JSON.parse('{{ nasa_Data | tojson | safe}}');
 
         document.getElementById("clearButton").style = "display: block";
+        document.getElementById("nasa_APOD_exp").style = "display: block";
         
         document.getElementById("nasa_APOD_title").textContent = nData.title;
         document.getElementById("nasa_APOD_date").textContent = nData.date;
