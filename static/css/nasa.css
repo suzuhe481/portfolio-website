@@ -1,60 +1,130 @@
-/* Styles the heading */
+/* Styles the heading. */
 #heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
 
-  border: solid 5px black;
+  border          : solid 3px black;
+  border-radius   : 10px;
 
-  margin: 5px 10px;
-  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+  margin          : 5px 10px;
 }
 
-/* Styles the title in the heading */
+/* Styles the title in the heading. */
 #title {
-  font-size: 2em;
-  text-decoration: underline;
+  font-size       : 2em;
+  text-decoration : underline;
 }
 
-/* Centers most of telements in .project-container */
+/* Centers most of telements in .project-container. */
 div.project-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  gap             : 2em;
 }
 
+/* Hides the border from buttons and inputs. */
 select#nasa-form,
 form > input[type=submit],
 #APOD_Content > #clearButton {
-  border: none;
+  border  : none;
 }
 
-/* Centers the text in the heading */
+/* Centers the text in the heading. */
 div#heading > h1,
 div#heading > p {
-  text-align: center;
+  text-align  : center;
 }
 
-/* Centers the elements in the form and #APOD_Content */
+form > #nasa-form {
+  width         : 50vw;
+  height        : 30px;
+
+  font-weight   : bold;
+
+  border-radius : 10px;
+
+  text-align    : center;
+}
+
+form > input[type=submit] {
+  width         : 30vw;
+  height        : 30px;
+
+  font-weight   : bold;
+
+  border-radius : 10px;
+}
+
+/* Centers the elements in the form and #APOD_Content. */
 form,
 #APOD_Content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5em;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  gap   : 0.5em;
 }
 
-/* Bolds the font of the APOD title and date */
+/* Styles the "Clear Page" button. */
+#APOD_Content > #clearButton {
+  align-self    : flex-start;
+  margin-left   : 20px;
+
+  width         : 30vw;
+  height        : 30px;
+
+  font-weight   : bold;
+}
+
+/* Bolds the font of the APOD title and date. */
 #APOD_Content > #nasa_APOD_title,
 #APOD_Content > #nasa_APOD_date {
-  font-weight: bold;
+  font-weight     : bold;
+  text-decoration : underline;
+  font-style      : italic;
 }
 
+/* Adds a border to the APOD explanation. */
 #APOD_Content > #nasa_APOD_exp {
-  padding: 1em;
-  margin: 1em;
-  font-style: italic;
-  border: 5px black solid;
-  border-radius: 25px;
+  padding       : 1em;
+  margin        : 1em;
+
+  border        : 5px black solid;
+  border-radius : 25px;
+}
+
+/* Mobile rules and for screens under 600px. */
+@media only screen and (hover: none), (max-width: 600px) {
+  form > #nasa-form {
+    font-size     : 1.5em;
+    font-weight   : bold;
+
+    width         : 80vw;
+    height        : 50px;
+  }
+
+  form > input[type=submit] {
+    font-size     : 1.2em;
+    font-weight   : bold;
+
+    width         : 50vw;
+    height        : 50px;
+  }
+
+  form > #customDate {
+    width           : 50vw;
+    height          : 30px;
+
+    font-size       : 1.5em;
+    text-align      : center;
+    vertical-align  : center;
+  }
+  
+  /* Highlights submit button when clicked. */
+  form > input[type=submit]:active {
+    background-color  : darkgray;
+  }
 }
