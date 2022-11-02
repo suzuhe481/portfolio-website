@@ -9,14 +9,12 @@ function toggleCalendar() {
   console.log(nasaForm.value);
 
   if (nasaForm.value == "getCustom") {
-    console.log("display calendar");
     var x = document.getElementsByClassName("customDate");
     for (var i = 0; i < x.length; i++) {
       x[i].style.display = "block";
     }
   }
   else {
-    console.log("hide calendar");
     var x = document.getElementsByClassName("customDate");
     for (var i = 0; i < x.length; i++) {
       x[i].style.display = "none";
