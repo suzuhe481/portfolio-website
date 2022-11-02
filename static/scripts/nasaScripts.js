@@ -43,10 +43,12 @@ document.getElementById("customDate").setAttribute("max", today);
 
 // Clears the page of images and data.
 function clearPage() {
-  document.getElementById("nasa_APOD_title").textContent = "";
-  document.getElementById("nasa_APOD_date").textContent = "";
-  document.getElementById("nasa_APOD_image").src = "";
-  document.getElementById("nasa_APOD_video").src = "";
-  document.getElementById("nasa_APOD_video").style = "display: none;"
-  document.getElementById("nasa_APOD_exp").innerHTML = "";
+  document.getElementById("APOD_Content").textContent = ""
+  // document.getElementById("nasa_APOD_title").textContent = "";
+  // document.getElementById("nasa_APOD_date").textContent = "";
+  // document.getElementById("nasa_APOD_image").src = "";
+  // document.getElementById("nasa_APOD_video").src = "";
+  // document.getElementById("nasa_APOD_video").style = "display: none;"
+  // document.getElementById("nasa_APOD_exp").innerHTML = "";
+  // document.getElementById("clearButton").style = "display: none;"
 }
