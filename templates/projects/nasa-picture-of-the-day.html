@@ -31,40 +31,42 @@
         <input class="customDate" type="date" id="customDate" name="pickedDate" min="1995-06-16" max="" style="display:none;">
         <input type="submit" value="Submit">
       </form>
-
-      <button onclick="clearPage()">Click to Clear Page</button>
+      
+      <div id="APOD_Content">
+        <button id="clearButton" style="display: none;" onclick="clearPage()">Clear Page</button>
+        <p id="nasa_APOD_title"></p>
+        <p id="nasa_APOD_date"></p>
+        <img id="nasa_APOD_image" src="" width="80%">
+        <iframe id="nasa_APOD_video" width="420" height="315" style="display: none;" allowfullscreen src=""></iframe> 
+        <p id="nasa_APOD_exp"></p>
+      </div>
 
       <!-- If data is recieved, display below. -->
       {% if nasa_Data %}
-        <div id="APOD_Content">
-          <p id="nasa_APOD_title"></p>
-          <p id="nasa_APOD_date"></p>
-          <img id="nasa_APOD_image" src="" width="80%">
-          <iframe id="nasa_APOD_video" width="420" height="315" style="display: none;" allowfullscreen src=""></iframe> 
-          <p id="nasa_APOD_exp"></p>
-        </div>
         
-        <!-- Displays the APOD data. -->
-        <script>
-          var nData = JSON.parse('{{ nasa_Data | tojson | safe}}');
+      <!-- Displays the APOD data. -->
+      <script>
+        var nData = JSON.parse('{{ nasa_Data | tojson | safe}}');
 
-          document.getElementById("nasa_APOD_title").textContent = nData.title;
-          document.getElementById("nasa_APOD_date").textContent = nData.date;
+        document.getElementById("clearButton").style = "display: block";
         
-          // Checks if APOD is a youtube video or picture and displays it in correct html element.
-          if(nData.url.includes("youtube.com")) {
-            document.getElementById("nasa_APOD_video").src = nData.url;
-            document.getElementById("nasa_APOD_video").style = "display: block;"    // Displays video.
-            document.getElementById("nasa_APOD_image").style = "display: none";     // Hides image.
-          }
-          else {
-            document.getElementById("nasa_APOD_image").src = nData.hdurl;
-            document.getElementById("nasa_APOD_video").style = "display: none;"     // Hides video.
-            document.getElementById("nasa_APOD_image").style = "display: block;"    // Displays image.
-          }
+        document.getElementById("nasa_APOD_title").textContent = nData.title;
+        document.getElementById("nasa_APOD_date").textContent = nData.date;
+      
+        // Checks if APOD is a youtube video or picture and displays it in correct html element.
+        if(nData.url.includes("youtube.com")) {
+          document.getElementById("nasa_APOD_video").src = nData.url;
+          document.getElementById("nasa_APOD_video").style = "display: block;"    // Displays video.
+          document.getElementById("nasa_APOD_image").style = "display: none";     // Hides image.
+        }
+        else {
+          document.getElementById("nasa_APOD_image").src = nData.hdurl;
+          document.getElementById("nasa_APOD_video").style = "display: none;"     // Hides video.
+          document.getElementById("nasa_APOD_image").style = "display: block;"    // Displays image.
+        }
 
-          document.getElementById("nasa_APOD_exp").textContent = nData.explanation;
-        </script>
+        document.getElementById("nasa_APOD_exp").textContent = nData.explanation;
+      </script>
       {% endif %}
 
     </div>
