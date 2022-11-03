@@ -2,16 +2,20 @@ from flask import Flask, render_template, request
 import config
 
 import scripts.projects.nasaApodProject as nasaModule
+import scripts.projects.imdbChartProject as imdbModule
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route("/about/")
 def about():
     return render_template('about.html', title = "About me")
+
 
 @app.route("/nasa-picture-of-the-day/", methods=['POST', 'GET']) 
 def nasa_api_project():
@@ -46,3 +50,38 @@ def nasa_api_project():
 
     # Renders NASA project page with data.
     return render_template('projects/nasa-picture-of-the-day.html', title = "NASA Astronomy Picture of the Day", nasa_Data=returned_APOD_JSON)
+
+
+@app.route("/imdb-ratings-chart/", methods=['POST', 'GET'])
+def imdb_project():
+    if request.method == "POST":
+        # imdbLink = request.form.get("imdbLink")
+        formData = request.form.to_dict()
+
+        # print("imdb link is below")
+        # print(imdbLink)
+        # console.logger(imdbLink)
+        app.logger.info("form data is:")
+        app.logger.info(formData)
+
+        app.logger.info("link is:")
+        app.logger.info(formData.get("imdbLink"))
+        imdbLink = formData.get("imdbLink")
+
+        app.logger.info("color is:")
+        app.logger.info(formData.get("chart-color"))
+
+
+
+        # Creates a heatmap if the link is a valid show.
+        if imdbModule.validateIMDBLink(imdbLink):
+            showID = imdbModule.extractID(imdbLink)
+
+            showRatingsChart = imdbModule.createChart(showID)
+
+            return render_template('projects/imdb-ratings-chart.html', title="IMDB Ratings Chart", imdbLink=imdbLink, showRatingsChart=showRatingsChart)
+        # Returns an error if show is not valid.
+        else:
+            return render_template('projects/imdb-ratings-chart.html', title="IMDB Ratings Chart", error="Link must be from a series with multiple episodes.")
+    else:
+        return render_template('projects/imdb-ratings-chart.html', title="IMDB Ratings Chart")
