@@ -76,8 +76,9 @@ def imdb_project():
         # Creates a heatmap if the link is a valid show.
         if imdbModule.validateIMDBLink(imdbLink):
             showID = imdbModule.extractID(imdbLink)
+            chartColor = formData.get("chart-color")
 
-            showRatingsChart = imdbModule.createChart(showID)
+            showRatingsChart = imdbModule.createChart(showID, chartColor)
 
             return render_template('projects/imdb-ratings-chart.html', title="IMDB Ratings Chart", imdbLink=imdbLink, showRatingsChart=showRatingsChart)
         # Returns an error if show is not valid.
