@@ -32,20 +32,19 @@
     {% endif %}
 
     {% if error %}
-      <p>
-        {{ error }}
-      </p>
+      <div id="error-message">
+        <p>
+          {{ error }}
+        </p>
+        <button id="clearButton" onclick="clearError()">Clear Error</button>
+      </div>
     {% endif %}
 
-    <!-- <script>
-        $(document).ready(function() {
-            $("#imdbForm").validate({
-                
-            });
-            });
-
-
-    </script> -->
+    <script>
+      function clearError() {
+        document.getElementById("error-message").style.display = "none";
+      }
+    </script>
   </div>
   {% endblock %}
 
