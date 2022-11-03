@@ -13,11 +13,11 @@ import base64
 # Description: Creates the heatmap by executing a sequence of other functions.
 # @Parameters: showID - The ID of the show being used.
 # @Return:     heatmap - The heatmap created from the show.
-def createChart(showID):
+def createChart(showID, chartColor):
     series, ratingsArr, lowestRated = createRatingsArray(showID)
 
     # Creates the heatmap using above variables.
-    heatmap = createRatingHeatmap(ratingsArr, series, lowestRated)
+    heatmap = createRatingHeatmap(ratingsArr, series, lowestRated, chartColor)
 
     return heatmap
 
@@ -161,7 +161,7 @@ def createRatingsArray(inputShowId):
 # Description: Creates a heatmap of the ratings using a 2D array.
 # @Parameters: ratingsArray - The 2D array of the show's ratings.
 # @Return:     imgB64String - An encoded png image of a heatmap of a show's ratings.
-def createRatingHeatmap(ratingsArray, series, lowestRated):
+def createRatingHeatmap(ratingsArray, series, lowestRated, chartColor):
     
     # Creates the intervals for the x and y axis.
     seasonsX = list(range(1, len(ratingsArray[0])+1))
@@ -177,7 +177,7 @@ def createRatingHeatmap(ratingsArray, series, lowestRated):
     hideZeroMask = (ratingsArray == 0)
 
     # Inputs the data of the show's ratings into an seaborn heatmap.
-    sns.heatmap(ratingsArray,vmin=lowestRated,vmax=10, annot=ratingsArray, linewidth=0.3, cmap="Blues",
+    sns.heatmap(ratingsArray,vmin=lowestRated,vmax=10, annot=ratingsArray, linewidth=0.3, cmap=chartColor,
                 mask=hideZeroMask, xticklabels=seasonsX, yticklabels=episodesY)
 
     # Labels the title, x-axis, and y-axis.
