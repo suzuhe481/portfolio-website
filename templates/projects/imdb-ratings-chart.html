@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+  {% extends "layout.html" %}
+
+  {% block content %}
+  <div class="project2">
+    <h1>IMDB Series Rating Chart Creator</h1>
+    <p>
+      This page let's you pick a series from IMDB and create a chart to see it's ratings.<br/>
+      Note: May take longer to run if a series has many episodes.
+    </p>
+
+
+    <form id="imdbForm" method="POST">
+      <label for="fname">IMDB Link:</label><br>
+      <input type="text" id="imdbLink" name="imdbLink" required><br>
+
+      <select name="chart-color" id="chart-color">
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Yellow">Yellow</option>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    {% if imdbLink %}
+      <img src="{{ showRatingsChart }}">
+    {% endif %}
+
+    {% if error %}
+      <p>
+        {{ error }}
+      </p>
+    {% endif %}
+
+    <!-- <script>
+        $(document).ready(function() {
+            $("#imdbForm").validate({
+                
+            });
+            });
+
+
+    </script> -->
+  </div>
+  {% endblock %}
+
+  </body>
+</html>
