@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imdb.css') }}">
+  </head>
 
   <body>
   {% extends "layout.html" %}
 
   {% block content %}
-  <div class="project2">
-    <h1>IMDB Series Rating Chart Creator</h1>
-    <p>
-      This page let's you pick a series from IMDB and create a chart to see it's ratings.<br/>
-      Note: May take longer to run if a series has many episodes.
-    </p>
+  <div class="project-container">
+    <div id="heading">
+      <h1 id="title">IMDB Series Rating Chart Maker</h1>
+      <p>
+        This page let's you pick a series from IMDB and create a chart to see it's ratings.<br/>
+        Just paste a link from a show on IMDB, and pick a color for your chart.
+        Note: May take longer to run if a series has many episodes.
+      </p>
+    </div>
 
 
     <form id="imdbForm" method="POST">
-      <label for="fname">IMDB Link:</label><br>
-      <input type="text" id="imdbLink" name="imdbLink" required><br>
+      <label for="imdbLink">Paste a show's link from IMDB:</label>
+      <input type="text" id="imdbLink" name="imdbLink" required>
 
+      <label for="chart-color">Pick a color for your chart:</label>
       <select name="chart-color" id="chart-color">
         <option value="Blues">Blue</option>
         <option value="Reds">Red</option>
@@ -30,7 +37,7 @@
     </form>
 
     {% if imdbLink %}
-      <img src="{{ showRatingsChart }}">
+      <img id="imdb-chart" src="{{ showRatingsChart }}">
     {% endif %}
 
     {% if error %}
