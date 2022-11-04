@@ -1,0 +1,95 @@
+/* Styles the heading. */
+#heading {
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  border          : solid 3px black;
+  border-radius   : 10px;
+
+  margin          : 5px 10px;
+}
+
+/* Styles the title in the heading. */
+#title {
+  font-size       : 2em;
+  text-decoration : underline;
+}
+
+/* Centers most of telements in .project-container. */
+div.project-container {
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  gap             : 2em;
+}
+
+/* Centers the elements in the form and #APOD_Content. */
+form {
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  gap   : 0.5em;
+}
+
+/* Styling the submit button in the form. */
+form > input[type=submit] {
+  border  : none;
+
+  width         : 30vw;
+  height        : 30px;
+
+  font-weight   : bold;
+
+  border-radius : 10px;
+}
+
+/* Styles the drop down for chart color. */
+form > #chart-color {
+  width         : 50vw;
+  height        : 30px;
+
+  font-weight   : bold;
+
+  border        : none;
+  border-radius : 10px;
+
+  text-align    : center;
+}
+
+/* Adjusts te size of the chart. */
+#imdb-chart {
+  width: 100vw;
+}
+
+/* Mobile rules and for screens under 600px. */
+@media only screen and (hover: none), (max-width: 600px) {
+  
+  #imdbLink {
+    width   : 80vw;
+    height  : 30px;
+  }
+
+  form > #chart-color {
+    font-size     : 1.5em;
+    font-weight   : bold;
+
+    width         : 80vw;
+    height        : 50px;
+  }
+
+  form > input[type=submit] {
+    font-size     : 1.2em;
+    font-weight   : bold;
+
+    width         : 50vw;
+    height        : 50px;
+  }
+  
+  /* Highlights submit button when clicked. */
+  #imdbForm > input[type=submit]:active {
+    background-color  : darkgray;
+  }
+}
