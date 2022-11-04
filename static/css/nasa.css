@@ -49,6 +49,7 @@ form > #nasa-form {
   text-align    : center;
 }
 
+/* Styling the submit button. */
 form > input[type=submit] {
   width         : 30vw;
   height        : 30px;
