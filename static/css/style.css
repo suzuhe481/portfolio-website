@@ -211,7 +211,7 @@ Styles text inside the navigation bar...
 }
 
 /* Desktop rules. */
-@media screen {
+@media only screen and (pointer: fine) {
   /* Changes link color in nav-bar on hover. */
   #nav-bar a:hover,
   #projects-dropdown:hover,
