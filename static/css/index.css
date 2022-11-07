@@ -1,0 +1,6 @@
+/* Desktop rules. */
+@media only screen and (pointer: fine) {
+  #body-container {
+    margin: 1em 100px 0;
+  }  
+}
