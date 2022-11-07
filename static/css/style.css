@@ -19,7 +19,7 @@ Responsive stylings.
   overflow          : hidden;
 
   display           : flex;
-  align-items       : center;
+  justify-content   : center;
 }
 
 /* Hides the decoration of every list item inside the navbar. */
