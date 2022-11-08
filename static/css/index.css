@@ -1,6 +1,79 @@
+/* Default mobile stylings. */
+
+/* Adds a background color and rounded border to elements. */
+#intro, 
+#intro-2 .right-margin,
+#intro-2 .left-margin,
+#links {
+  padding: 0.75em;
+  background-color: lightgray;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+/* Aligns text in links */
+#links p {
+  text-align: center;
+}
+
+/* Styles links. */
+#links a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+/* Styles the body container. */
+#body-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 10vw 0;
+}
+
+/* Styles intro */
+#intro {
+  margin-bottom: 2vh;
+}
+
+#intro-2 {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* align-content: space-between; */
+  gap: 10px;
+  margin-bottom: 5vh;
+}
+
+#links {
+  font-size: 20px;
+}
+
 /* Desktop rules. */
 @media only screen and (pointer: fine) {
-  #body-container {
-    margin: 1em 100px 0;
-  }  
+  /* Styles intro */
+  #intro {
+    margin-bottom: 5vh;
+  }
+
+  /* Styling for the text in #intro */
+  #intro > p {
+    font-size: 42px;
+  }
+
+  /* Styles p tags in intro-2 */
+  #intro-2 > p {
+    font-size: 24px;
+  }
+
+  /* Margin on the left or right, depending on class. */
+  #intro-2 > .right-margin {
+    margin-right: 10vw;
+  }
+  #intro-2 > .left-margin {
+    margin-left: 10vw;
+  }
+
+  #links {
+    margin: 0 10vw;
+  }
 }
