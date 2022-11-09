@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all-projects.css') }}">
   </head>
 
 {% extends "layout.html" %}
@@ -12,7 +12,104 @@
     <h1 id="title">All Projects</h1>
   </div>
   <div id="project-cards-container">
+    <a href="{{ url_for('nasa_api_project') }}">
+      <div class="project-card">
+        <div class="card-title">NASA's Astronomy Picture Of the Day</div>
+        <p class="card-description">
+          This will let you use NASA's APOD (Astronomy Picture Of the Day) API. <br>
+          You will be able to view today's APOD, a random APOD, or an APOD from a day you pick. <br>
+          APOD's can be pictures, gifs, or YouTube videos.
+        </p>
+      </div>
+    </a>
 
+    <a href="{{ url_for('imdb_project') }}">
+      <div class="project-card">
+        <div class="card-title">IMDB Series Rating Chart Maker</div>
+        <p class="card-description">
+          This page let's you pick a series from IMDB and create a chart to see it's ratings.<br/>
+          Just paste a link from a show on IMDB, and pick a color for your chart.
+          Note: May take longer to run if a series has many episodes.
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 3</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 4</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 5</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 6</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 7</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 8</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="project-card">
+        <div class="card-title">Project 9</div>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi dolores expedita quasi sed nemo, itaque soluta est, non qui ipsam
+          porro aspernatur quibusdam eum, voluptatibus minima aperiam facilis modi quam!
+        </p>
+      </div>
+    </a>
   </div>
 </body>
 {% endblock %}
