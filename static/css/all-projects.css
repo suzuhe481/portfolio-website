@@ -1,0 +1,76 @@
+/* Default mobile stylings */
+#heading {
+  font-size   : 2em;
+  font-weight : bold;
+  text-align  : center;
+
+  margin        : 2vh 0; /* top/bottom  left/right */
+}
+
+/* Styles the project container */
+#project-cards-container {
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+}
+
+/* Hides link decorations */
+#project-cards-container > a {
+  text-decoration : none;
+
+  color           : black;
+}
+
+/* Styles each project card */
+.project-card {
+  border        : 1px solid black;
+  border-radius : 30px;
+  width         : 80vw;
+
+  padding       : 0.5em 1em 1em 1em; /* top right bottom left */
+
+  margin-bottom : 1em;
+}
+
+/* Styles each card title */
+.card-title {
+  font-size     : 1.5em;
+  font-weight   : bold;
+
+  border-bottom : 1px solid black;
+  text-align    : center;
+}
+
+/* Desktop rules. */
+@media only screen and (pointer: fine) {
+  /* Styles the project container */
+  #project-cards-container {
+    flex-direction  : row;
+    flex-wrap       : wrap;
+
+    justify-content : center;
+
+    margin          : 0 7vw; /* top/bottom left/right */
+  }
+
+  /* Styles each project card */
+  .project-card {
+    display        : flex;
+    flex-direction : column;
+
+    width  : 300px;
+    height : 130px;
+
+    margin : 1em;
+
+    border-radius : 10px;
+  }
+
+  /* Adds ellipsis to end of project description */
+  .card-description {
+      overflow           : hidden;
+      display            : -webkit-box;
+      -webkit-line-clamp : 4;
+      -webkit-box-orient : vertical;
+  }
+}
