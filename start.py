@@ -11,6 +11,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/all-projects/")
+def all_projects():
+    return render_template('all-projects.html', title = "All Projects")
+
 
 @app.route("/about/")
 def about():
