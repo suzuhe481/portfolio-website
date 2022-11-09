@@ -26,7 +26,7 @@
             <span class="fa fa-caret-down"></span>
           </button>
           <ul id="dropdown-content">
-            <li><a href="">All Projects</a></li>
+            <li><a href="{{ url_for('all_projects') }}">All Projects</a></li>
             <li><a href="{{ url_for('nasa_api_project') }}">NASA Astronomy Picture of the Day</a></li>
             <li><a href="{{ url_for('imdb_project') }}">IMDB Ratings Chart Maker</a></li>
           </ul>
