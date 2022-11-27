@@ -28,9 +28,22 @@ div.project-container {
   gap             : 2em;
 }
 
-/* Centers the links */
+/* Styles the links container */
 #links {
-  text-align: center;
+  background-color  : lightgray;
+
+  padding           : 0.75em;
+  border-radius     : 10px;
+  border            : 1px solid black;
+  
+  text-align        : center;
+}
+
+/* Styles links. */
+#links a {
+  font-weight     : bold;
+  text-decoration : none;
+  color           : black;
 }
 
 /* Desktop rules */
