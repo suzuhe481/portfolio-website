@@ -161,7 +161,9 @@ def createRatingsArray(inputShowId):
 # Description: Creates a heatmap of the ratings using a 2D array.
 # @Parameters: ratingsArray - The 2D array of the show's ratings.
 # @Return:     imgB64String - An encoded png image of a heatmap of a show's ratings.
-def createRatingHeatmap(ratingsArray, series, lowestRated, chartColor):
+# Website with other color values for reference.
+# https://medium.com/@morganjonesartist/color-guide-to-seaborn-palettes-da849406d44f
+def createRatingHeatmap(ratingsArray, series, lowestRated, chartColor="Blues"):
     
     # Creates the intervals for the x and y axis.
     seasonsX = list(range(1, len(ratingsArray[0])+1))
