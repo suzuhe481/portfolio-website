@@ -90,3 +90,9 @@ def imdb_project():
             return render_template('projects/imdb-ratings-chart.html', title="IMDB Ratings Chart", error="Link must be from a series with multiple episodes.")
     else:
         return render_template('projects/imdb-ratings-chart.html', title="IMDB Ratings Chart")
+
+
+@app.route("/admin-dashboard/")
+def admin_dashboard():
+    return render_template('projects/admin-dashboard.html', title = "Admin Dashboard")
+    
