@@ -1,0 +1,53 @@
+/* Default mobile stylings */
+
+/* Styles the heading. */
+#heading {
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  border          : solid 3px black;
+  border-radius   : 10px;
+
+  margin          : 2vh 5vw;
+  padding         : 1em 2em 2em;
+}
+
+/* Styles the title in the heading. */
+#title {
+  font-size       : 2em;
+  text-decoration : underline;
+}
+
+/* Centers most of the elements in .project-container. */
+div.project-container {
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+
+  gap             : 2em;
+}
+
+/* Centers the links */
+#links {
+  text-align: center;
+}
+
+/* Desktop rules */
+@media only screen and (pointer: fine) {
+  #heading {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+  
+    border          : solid 3px black;
+    border-radius   : 10px;
+  
+    margin          : 2vh 20vw;
+    padding         : 0.5em 2em 2em;
+  }
+
+  #links {
+    font-size: 1.5em;
+  }
+}
