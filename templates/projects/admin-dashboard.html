@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/project-styles.css') }}">
+  </head>
+
+  <body>
+  {% extends "layout.html" %}
+
+  {% block content %}
+    <div class="project-container">
+      <div id="heading">
+        <h1 id="title">Admin Dashboard Recreation</h1>
+        <p>
+          The purpose of this project is to recreate an admin dashboard based on an assignment 
+          on The Odin Project. There are no step by step instructions to this project, besides planning
+          help. I am given an image, and am then told to recreate it to the best of my ability.
+        </p>
+      </div>
+
+      <div id="links">
+        <p>To see the working dashboard,<br> <a href="https://suzuhe481.github.io/admin-dashboard/https://suzuhe481.github.io/admin-dashboard/">Click Here</a></p>
+        <br>
+        <p>To see the Github,<br> <a href="https://github.com/suzuhe481/admin-dashboard">Click Here</a></p>
+      </div>
+      
+
+    </div>
+  {% endblock %}
+
+  </body>
+</html>
