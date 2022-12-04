@@ -2,8 +2,7 @@
 
 /* Adds a background color and rounded border to elements. */
 #intro, 
-#intro-2 .right-margin,
-#intro-2 .left-margin,
+#intro-2 div,
 #links {
   background-color : lightgray;
 
@@ -64,8 +63,8 @@
     font-size : 42px;
   }
 
-  /* Styles p tags in intro-2 */
-  #intro-2 > p {
+  /* Styles the items in intro-2 */
+  #intro-2 > div {
     font-size : 24px;
   }
 
