@@ -69,12 +69,10 @@
     font-size : 24px;
   }
 
-  /* Margin on the left or right, depending on class. */
-  #intro-2 > .right-margin {
-    margin-right : 10vw;
-  }
-  #intro-2 > .left-margin {
-    margin-left  : 10vw;
+  /* Creates a grid of 2 columns */
+  #intro-2 {
+    display               : grid;
+    grid-template-columns : auto auto;
   }
 
   #links {
