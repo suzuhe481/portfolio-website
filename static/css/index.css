@@ -67,6 +67,12 @@
 
 /* Desktop rules. */
 @media only screen and (pointer: fine) {
+  /* Styles the body container. */
+  #body-container {
+    margin-left  : 15vw;
+    margin-right : 15vw;
+  }
+
   /* Styles intro */
   #intro {
     margin-bottom : 5vh;
