@@ -103,6 +103,8 @@ Styles text inside the navigation bar...
   display         : block;
   float           : none;
   padding         : 12px 16px;
+
+  border          : 1px solid black;
 }
 
 /* Styles and hides the hamburger icon on desktop. */
