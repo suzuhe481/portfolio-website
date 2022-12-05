@@ -17,6 +17,11 @@
   font-size   : 24px;
 }
 
+/* Font size for text in intro */
+#intro {
+  font-size: 22px;
+}
+
 /* Aligns text in links */
 #links p {
   text-align       : center;
