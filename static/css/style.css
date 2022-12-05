@@ -4,6 +4,11 @@ Links.
 Responsive stylings.
 */
 
+/* Font style for everything. */
+body > *{
+  font-family : Monaco, monospace;
+}
+
 /* Styles the Home button of the text "Hector Suazo". */
 #home {
   color       : white;
@@ -49,8 +54,8 @@ Styles text inside the navigation bar...
 #nav-bar > li > a {
   color           : #f2f2f2;
 
-  font-size       : 17px;
-  font-family     : 'Courier New', Courier, monospace;
+  font-size       : 24px;
+  font-family     : Monaco, monospace;
   text-decoration : none;
 
   text-align      : center;
@@ -132,13 +137,13 @@ Styles text inside the navigation bar...
   #nav-bar > li > a,
   #dropdown-button,
   #hamburger-icon {
-    font-size   : 2.5em;
+    font-size   : 2rem;
     font-weight : bold;
   }
 
   /* Adjusts the font size for the project links in the dropdown menu. */
   #nav-bar #dropdown-content li {
-    font-size : 1.5em;
+    font-size : 1em;
   }
 
   /* Allows the home screen to shrnk/grow as width changes. */
