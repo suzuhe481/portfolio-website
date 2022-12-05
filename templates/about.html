@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+  </head>
 
 {% extends "layout.html" %}
 
 {% block content %}
 <body>
-  <div>
-    <p>
-      This is a portfolio site.
-    </p>
+  <div id="cards-container">
+    <div>
+      <p class="card-title">Experience</p>
+      With a B.S. in Computer Science, this website serves as my portfolio and a way to showcase my skills.
+    </div>
+    <div>
+      <p class="card-title">Purpose</p>
+      I created this website using Python and the Flask framework. <br>
+      I picked Flask because I enjoy using Python and its vast library of modules
+      such as NumPy, Matplotlib, and Seaborn. <br>
+      As for the design of the website, it was made from scratch using vanilla CSS and no frameworks.
+    </div>
+    <div>
+      <p class="card-title">What</p>
+      I have projects involving APIs, recreating a page with a given template, and more.
+    </div>
+    <div>
+      <p class="card-title">More What</p>
+      In addition to Python, I am familiar with HTML, CSS, JavaScript, Ruby, Java. <br>
+      I also have some past experience with C++ and Java.
+    </div>
   </div>
 </body>
 {% endblock %}
