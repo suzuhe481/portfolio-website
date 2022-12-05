@@ -12,6 +12,12 @@
   border           : 1px solid black;
 }
 
+/* Styles the first word of the intro */
+.greeting {
+  font-weight : bold;
+  font-size   : 24px;
+}
+
 /* Aligns text in links */
 #links p {
   text-align       : center;
@@ -25,6 +31,14 @@
   text-decoration  : none;
 }
 
+/* Styles titles in intro-2 items */
+#intro-2 > div > .intro-2-title {
+  font-size       : 20px;
+  font-weight     : bold;
+  text-decoration : underline;
+  text-align      : center;
+}
+
 /* Styles the body container. */
 #body-container {
   display        : flex;
@@ -35,20 +49,20 @@
 
 /* Styles intro */
 #intro {
-  margin-bottom  : 2vh;
+  margin-bottom : 2vh;
+  text-align    : center;
 }
 
 #intro-2 {
   display            : flex;
   flex-direction     : column;
-  /* justify-content : space-around; */
-  /* align-content   : space-between; */
   gap                : 10px;
   margin-bottom      : 5vh;
 }
 
 #links {
   font-size : 20px;
+  margin    : 0 0 2vh 0;
 }
 
 /* Desktop rules. */
@@ -58,9 +72,21 @@
     margin-bottom : 5vh;
   }
 
+  /* Styles the first word of the intro */
+  .greeting {
+    font-weight : bold;
+    font-size   : 48px;
+  }
+
   /* Styling for the text in #intro */
   #intro > p {
-    font-size : 42px;
+    font-size  : 42px;
+    text-align : center;
+  }
+
+  /* Styles titles in intro-2 items */
+  #intro-2 > div > .intro-2-title {
+    font-size : 28px;
   }
 
   /* Styles the items in intro-2 */
@@ -75,6 +101,8 @@
   }
 
   #links {
-    margin : 2vh 10vw;
+    margin-left   : 10vw;
+    margin-right  : 10vw;
+    margin-bottom : 2vh;
   }
 }
