@@ -1,0 +1,65 @@
+/* Default mobile stylings. */
+/* Adds a background color and rounded border to elements. */
+#cards-container div {
+  background-color : lightgray;
+
+  padding          : 0.75em;
+
+  border-radius    : 10px;
+  border           : 1px solid black;
+}
+
+/* Styles titles in intro-2 items */
+#cards-container > div > .card-title {
+  font-size       : 20px;
+  font-weight     : bold;
+  text-decoration : underline;
+  text-align      : center;
+}
+
+/* Styles the body container. */
+#cards-container {
+  display        : flex;
+  flex-direction : column;
+
+  margin         : 1em 10vw 0;
+}
+
+#cards-container {
+  display            : flex;
+  flex-direction     : column;
+  gap                : 10px;
+  margin-bottom      : 5vh;
+}
+
+
+/* Desktop rules. */
+@media only screen and (pointer: fine) {
+  /* Styles the body container. */
+  #cards-container {
+    margin-left  : 15vw;
+    margin-right : 15vw;
+  }
+
+  /* Styling for the text in #intro */
+  #intro > p {
+    font-size  : 42px;
+    text-align : center;
+  }
+
+  /* Styles titles in intro-2 items */
+  #cards-container > div > .intro-2-title {
+    font-size : 28px;
+  }
+
+  /* Styles the items in intro-2 */
+  #cards-container > div {
+    font-size : 24px;
+  }
+
+  /* Creates a grid of 2 columns */
+  #cards-container {
+    display               : grid;
+    grid-template-columns : auto auto;
+  }
+}
