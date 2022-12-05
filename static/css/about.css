@@ -48,7 +48,7 @@
   }
 
   /* Styles titles in intro-2 items */
-  #cards-container > div > .intro-2-title {
+  #cards-container > div > .card-title {
     font-size : 28px;
   }
 
