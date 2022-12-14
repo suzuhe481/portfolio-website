@@ -121,6 +121,7 @@ label#date-text {
 /* Mobile rules and for screens under 600px. */
 @media only screen and (hover: none), (max-width: 600px) {
   form > #nasa-form {
+    border        : none;
     font-size     : 1.5em;
     font-weight   : bold;
 
