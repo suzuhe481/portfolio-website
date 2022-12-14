@@ -20,14 +20,14 @@
       </div>
 
       <form method="POST">
-        <label for="nasa-form">Pick a way to get an Image: </label>
+        <label for="nasa-form" id="form-text">Pick a way to get an Image: </label>
         <select name="nasa-form" id="nasa-form" onchange="toggleCalendar()">
           <option name="getToday" value="getToday">Get Today's Image</option>
           <option name="getRandom" value="getRandom">Get a Random Image</option>
           <option name="getCustom" value="getCustom">Get a Specified Image</option>
         </select>
 
-        <label class="customDate" for="customDate" style="display:none;">Pick a Date:</label>
+        <label class="customDate" id="date-text" for="customDate" style="display:none;">Pick a Date:</label>
         <input class="customDate" type="date" id="customDate" name="pickedDate" min="1995-06-16" max="" style="display:none;">
         <input type="submit" value="Submit">
       </form>
