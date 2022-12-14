@@ -38,22 +38,32 @@ div#heading > p {
   text-align  : center;
 }
 
+/* Aligns the dropdown items. */
+form > #nasa-form > option {
+  text-align: center;
+}
+
+/* Styles the dropdown to picture type of image. */
 form > #nasa-form {
   width         : 50vw;
-  height        : 30px;
 
   font-weight   : bold;
+  font-size     : 46px;
 
+  border        : solid 3px black;
   border-radius : 10px;
 
   text-align    : center;
+
+  padding       : 10px 0;
 }
 
 /* Styling the submit button. */
 form > input[type=submit] {
   width         : 30vw;
-  height        : 30px;
+  /* height     : 30px; */
 
+  font-size     : 2em;
   font-weight   : bold;
 
   border-radius : 10px;
@@ -67,6 +77,17 @@ form,
   align-items     : center;
 
   gap   : 0.5em;
+}
+
+/* Styles the date picker */
+form > #customDate {
+  font-size: 2em;
+}
+
+/* Styles font size for  */
+label#form-text,
+label#date-text {
+  font-size: 1.5em;
 }
 
 /* Styles the "Clear Page" button. */
@@ -107,6 +128,7 @@ form,
     height        : 50px;
   }
 
+  /* Styles the submit button. */
   form > input[type=submit] {
     font-size     : 1.2em;
     font-weight   : bold;
@@ -115,6 +137,7 @@ form,
     height        : 50px;
   }
 
+  /* Styles the date picker. */
   form > #customDate {
     width           : 50vw;
     height          : 30px;
