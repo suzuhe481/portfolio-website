@@ -61,12 +61,12 @@ form > #nasa-form {
 /* Styling the submit button. */
 form > input[type=submit] {
   width         : 30vw;
-  /* height     : 30px; */
 
   font-size     : 2em;
   font-weight   : bold;
 
   border-radius : 10px;
+  padding       : 10px 0;
 }
 
 /* Centers the elements in the form and #APOD_Content. */
