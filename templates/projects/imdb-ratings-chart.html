@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/imdb.css') }}">
+    <script src="{{url_for('static', filename='scripts/imdbScripts.js')}}" async></script>
   </head>
 
   <body>
@@ -39,7 +40,10 @@
     </form>
 
     {% if imdbLink %}
-      <img id="imdb-chart" src="{{ showRatingsChart }}">
+      <div id="imdb-content">
+        <button id="clearButton" onclick="clearPage()">Clear Page</button>
+        <img id="imdb-chart" src="{{ showRatingsChart }}">
+      </div>
     {% endif %}
 
     {% if error %}
