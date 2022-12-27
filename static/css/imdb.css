@@ -77,6 +77,19 @@ form > #chart-color {
   width : 100vw;
 }
 
+/* Styles the "Clear Page" button. */
+#imdb-content > #clearButton {
+  align-self    : flex-start;
+  margin-left   : 20px;
+
+  width         : 30vw;
+  height        : 30px;
+
+  font-weight   : bold;
+
+  border        : none;
+}
+
 /* Highlights submit button when clicked. */
 #imdbForm > input[type=submit]:active {
   background-color  : darkgray;
