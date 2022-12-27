@@ -118,6 +118,11 @@ label#date-text {
   border-radius : 25px;
 }
 
+/* Highlights submit button when clicked. */
+form > input[type=submit]:active {
+  background-color  : darkgray;
+}
+
 /* Mobile rules and for screens under 600px. */
 @media only screen and (hover: none), (max-width: 600px) {
   form > #nasa-form {
