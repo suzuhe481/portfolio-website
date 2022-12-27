@@ -77,6 +77,11 @@ form > #chart-color {
   width : 100vw;
 }
 
+/* Highlights submit button when clicked. */
+#imdbForm > input[type=submit]:active {
+  background-color  : darkgray;
+}
+
 /* Mobile rules and for screens under 600px. */
 @media only screen and (hover: none), (max-width: 600px) {
   
