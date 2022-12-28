@@ -1,3 +1,5 @@
+/* Default mobile stylings */
+
 /* Styles the heading. */
 #heading {
   display         : flex;
@@ -43,29 +45,29 @@ form > #nasa-form > option {
   text-align: center;
 }
 
-/* Styles the dropdown to picture type of image. */
+/* Styling the dropdown. */
 form > #nasa-form {
-  width         : 50vw;
-
+  border        : none;
+  font-size     : 1.5em;
   font-weight   : bold;
-  font-size     : 46px;
 
-  border        : solid 3px black;
-  border-radius : 10px;
-
-  text-align    : center;
+  width         : 80vw;
 
   padding       : 10px 0;
+  
+  border-radius : 10px;
 }
 
-/* Styling the submit button. */
+/* Styles the submit button. */
 form > input[type=submit] {
-  width         : 30vw;
-
-  font-size     : 2em;
+  font-size     : 1.2em;
   font-weight   : bold;
 
+  width         : 50vw;
+  /* height        : 50px; */
+
   border-radius : 10px;
+
   padding       : 10px 0;
 }
 
@@ -123,37 +125,33 @@ form > input[type=submit]:active {
   background-color  : darkgray;
 }
 
-/* Mobile rules and for screens under 600px. */
-@media only screen and (hover: none), (max-width: 600px) {
+
+
+/* Desktop rules */
+@media only screen and (pointer: fine) {
+  /* Styling the dropdown  */
   form > #nasa-form {
-    border        : none;
-    font-size     : 1.5em;
-    font-weight   : bold;
-
-    width         : 80vw;
-  }
-
-  /* Styles the submit button. */
-  form > input[type=submit] {
-    font-size     : 1.2em;
-    font-weight   : bold;
-
     width         : 50vw;
-    height        : 50px;
+
+    font-weight   : bold;
+    font-size     : 46px;
+
+    border        : solid 3px black;
+    border-radius : 10px;
+
+    text-align    : center;
+
+    padding       : 10px 0;
   }
 
-  /* Styles the date picker. */
-  form > #customDate {
-    width           : 50vw;
-    height          : 30px;
-
-    font-size       : 1.5em;
-    text-align      : center;
-    vertical-align  : center;
-  }
+  /* Styling the submit button. */
+  form > input[type=submit] {
+    width         : 30vw;
   
-  /* Highlights submit button when clicked. */
-  form > input[type=submit]:active {
-    background-color  : darkgray;
+    font-size     : 2em;
+    font-weight   : bold;
+  
+    border-radius : 10px;
+    padding       : 10px 0;
   }
 }
