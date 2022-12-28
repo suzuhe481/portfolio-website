@@ -1,3 +1,5 @@
+/* Default mobile stylings */
+
 /* Styles the heading. */
 #heading {
   display         : flex;
@@ -25,15 +27,50 @@ div.project-container {
   gap             : 2em;
 }
 
+
+/* Styles the text input for imdb link. */
 #imdbLink {
-  font-size : 46px;
+  /* width     : 80vw; */
+
+  font-size : 20px;
 }
 
 /* Styles font for text. */
 label#link-text,
 label#color-text {
-  font-size : 1.5em;
+  font-size : 16px;
 }
+
+/* Styles the dropdown for chart color options. */
+form > #chart-color {
+  border        : none;
+
+  font-size     : 1.5em;
+  font-weight   : bold;
+
+  text-align    : center;
+
+  border-radius : 10px;
+
+  padding       : 10px 0;
+
+  width         : 80vw;
+}
+
+/* Styles the submit button. */
+form > input[type=submit] {
+  font-size     : 1.2em;
+  font-weight   : bold;
+
+  width         : 50vw;
+  /* height        : 50px; */
+
+  border-radius : 10px;
+  border        : none;
+
+  padding       : 10px 0;
+}
+
 
 /* Centers the elements in the form and #APOD_Content. */
 form {
@@ -46,7 +83,7 @@ form {
 
 /* Styling the submit button in the form. */
 form > input[type=submit] {
-  width         : 30vw;
+  /* width         : 30vw;
 
   font-size     : 2em;
   font-weight   : bold;
@@ -54,22 +91,22 @@ form > input[type=submit] {
   border        : none;
   border-radius : 10px;
 
-  padding       : 10px 0;
+  padding       : 10px 0; */
 }
 
 /* Styles the drop down for chart color. */
 form > #chart-color {
-  width         : 50vw;
+  /* width         : 50vw;
 
   font-weight   : bold;
-  font-size     : 46px;
+  font-size     : 46px; */
 
-  border        : solid 3px black;
-  border-radius : 10px;
+  /* border        : solid 3px black; */
+  /* border-radius : 10px;
 
   text-align    : center;
 
-  padding       : 10px 0;
+  padding       : 10px 0; */
 }
 
 /* Adjusts te size of the chart. */
@@ -95,40 +132,45 @@ form > #chart-color {
   background-color  : darkgray;
 }
 
-/* Mobile rules and for screens under 600px. */
-@media only screen and (hover: none), (max-width: 600px) {
-  
-  #imdbLink {
-    width     : 80vw;
 
-    font-size : 20px;
+/* Desktop rules */
+@media only screen and (pointer: fine) {
+
+  /* Styles the drop down for chart color. */
+  form > #chart-color {
+    width         : 50vw;
+
+    font-weight   : bold;
+    font-size     : 46px;
+
+    border        : solid 3px black;
+    border-radius : 10px;
+
+    text-align    : center;
+
+    /* padding       : 10px 0; */
   }
 
+  /* Styles font for text. */
   label#link-text,
   label#color-text {
-    font-size : 16px;
+    font-size : 1.5em;
   }
 
-  form > #chart-color {
-    border      : none;
-
-    font-size   : 1.5em;
-    font-weight : bold;
-
-    width       : 80vw;
-    height      : 50px;
+  #imdbLink {
+    font-size : 46px;
   }
 
+  /* Styling the submit button in the form. */
   form > input[type=submit] {
-    font-size     : 1.2em;
+    width         : 30vw;
+
+    font-size     : 2em;
     font-weight   : bold;
 
-    width         : 50vw;
-    height        : 50px;
-  }
-  
-  /* Highlights submit button when clicked. */
-  #imdbForm > input[type=submit]:active {
-    background-color  : darkgray;
+    border        : none;
+    border-radius : 10px;
+
+    padding       : 10px 0;
   }
 }
